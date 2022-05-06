@@ -30,38 +30,38 @@ class VOTACIONList extends Component {
       this.setState({ votacion: updatedVOTACIONES });
     });
   }
-/*
+
   async sumar(idvotacion) {
-    await fetch(`/votacions/${idvotacion}`, {
-      method: "", // SUMAR UNO
+    await fetch(`/votacions/${idvotacion}/incrementa`, {
+      method: "POST", 
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-    }).then(() => {
+    })/*.then(() => {
       let updatedVOTACIONES = [...this.state.votacion].filter(
         (i) => i.idvotacion !== idvotacion
       );
       this.setState({ votacion: updatedVOTACIONES }); //PREGUNTAR QUE HAY QUE CAMBIAR
-    });
+    });*/
   }
   async restar(idvotacion) {
-    await fetch(`/votacions/${idvotacion}`, {
-      method: "", // RESTAR UNO
+    await fetch(`/votacions/${idvotacion}/resta`, {
+      method: "POST", // RESTAR UNO
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-    }).then(() => {
+    })/*.then(() => {
       let updatedVOTACIONES = [...this.state.votacion].filter(
         (i) => i.idvotacion !== idvotacion
       );
       this.setState({ votacion: updatedVOTACIONES }); //PREGUNTAR QUE HAY QUE CAMBIAR
-    });
+    });*/
   }
 
   
-*/
+
   render() {
     const votacionList = this.state.votacion.map((votacion) => {
       return (

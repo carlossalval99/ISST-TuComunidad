@@ -9,8 +9,7 @@ class VOTACIONEdit extends Component {
         idvotacion: '',
         tema: '',
         fechayhoralimite: '',
-        votosafavor: '',
-        votosencontra: ''
+        votos: 0,
     };
 
     constructor(props) {
