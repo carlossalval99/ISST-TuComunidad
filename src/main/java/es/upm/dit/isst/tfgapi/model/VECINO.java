@@ -18,28 +18,42 @@ public class VECINO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
+    private String dni;
     private String nombre;
     private String piso;
-    private String contraseña;
-    private Boolean esPresidente;
+    private String clave;
+    
+//HACE FALTA????
 
-    @ManyToOne (fetch = FetchType.LAZY, optional = false)
+    //private Boolean enabled;
+
+    /*@ManyToOne (fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "comunidad_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    private COMUNIDAD comunidad;
+    private COMUNIDAD comunidad;*/
 
     public VECINO () { }
 
-    public VECINO(String nombre, String piso, String contraseña, Boolean esPresidente, COMUNIDAD comunidad) {
+    public VECINO(String dni, String nombre, String piso, String clave) {
+        this.dni = dni;
         this.nombre = nombre;
         this.piso = piso;
-        this.contraseña = contraseña;
-        this.esPresidente = esPresidente;
-        this.comunidad = comunidad;
+        this.clave = clave;
+        //this.comunidad = comunidad;
 
     }
     
+    
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
     public String getId() {
         return id;
     }
@@ -48,13 +62,15 @@ public class VECINO {
         this.id = id;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    
+    public String getClave() {
+        return clave;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
+
     public String getNombre() {
         return nombre;
     }
@@ -67,17 +83,6 @@ public class VECINO {
     public void setPiso(String piso) {
         this.piso = piso;
     }
-    public Boolean getEsPresidente() {
-        return esPresidente;
-    }
-    public void setEsPresidente(Boolean esPresidente) {
-        this.esPresidente = esPresidente;
-    }
-    public COMUNIDAD getComunidad() {
-        return comunidad;
-    }
-    public void setComunidad(COMUNIDAD comunidad) {
-        this.comunidad = comunidad;
-    }
+    
     
 }

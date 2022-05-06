@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +33,8 @@ public class INFOController {
 
     }
 
+    @Secured("ROLE_VECINO")
+
     @GetMapping("/infos")
 
     List<INFO> readAll() {
@@ -41,7 +44,7 @@ public class INFOController {
     }
 
  
-
+    @Secured("ROLE_VECINO")
     @PostMapping("/infos")
 
     ResponseEntity<INFO> create(@RequestBody INFO newINFO) throws URISyntaxException {
@@ -53,6 +56,7 @@ public class INFOController {
     }
 
  
+    @Secured("ROLE_VECINO")
 
     @GetMapping("/infos/{id}")
 
@@ -66,6 +70,7 @@ public class INFOController {
 
     }
 
+    @Secured("ROLE_VECINO")
 
     @PutMapping("/infos/{id}")
 
@@ -87,6 +92,7 @@ public class INFOController {
 
     }
 
+    @Secured("ROLE_VECINO")
 
     @DeleteMapping("infos/{id}")
 

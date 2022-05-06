@@ -106,20 +106,36 @@ public class VOTACIONController {
     }*/
 
 
-    /*@PostMapping("/tfgs/{id}/incrementa")
+    @PostMapping("/votacions/{id}/incrementa")
 
-    ResponseEntity<TFG> incrementa(@PathVariable String id) {
+    ResponseEntity<VOTACION> incrementa(@PathVariable String id) {
 
-      return tfgRepository.findById(id).map(tfg -> {
+      return votacionRepository.findById(id).map(votacion -> {
 
-       tfg.setStatus(tfg.getStatus() + 1);
+       votacion.setVotos(votacion.getVotos() + 1);
 
-        tfgRepository.save(tfg);
+        votacionRepository.save(votacion);
 
-        return ResponseEntity.ok().body(tfg);
+        return ResponseEntity.ok().body(votacion);
 
-      }).orElse(new ResponseEntity<TFG>(HttpStatus.NOT_FOUND));  
+      }).orElse(new ResponseEntity<VOTACION>(HttpStatus.NOT_FOUND));  
 
-    }*/
+    }
+
+    @PostMapping("/votacions/{id}/resta")
+
+    ResponseEntity<VOTACION> resta(@PathVariable String id) {
+
+      return votacionRepository.findById(id).map(votacion -> {
+
+       votacion.setVotos(votacion.getVotos() - 1);
+
+        votacionRepository.save(votacion);
+
+        return ResponseEntity.ok().body(votacion);
+
+      }).orElse(new ResponseEntity<VOTACION>(HttpStatus.NOT_FOUND));  
+
+    }
 
 }

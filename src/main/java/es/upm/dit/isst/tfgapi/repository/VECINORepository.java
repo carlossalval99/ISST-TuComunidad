@@ -13,6 +13,7 @@ import es.upm.dit.isst.tfgapi.model.VECINO;
 
 public interface VECINORepository extends CrudRepository<VECINO, String> {
 
-   List<VECINO> findByComunidad(COMUNIDAD comunidad);
+   //List<VECINO> findByComunidad(COMUNIDAD comunidad);
+   //VECINO findByPiso(String piso);
 
 }

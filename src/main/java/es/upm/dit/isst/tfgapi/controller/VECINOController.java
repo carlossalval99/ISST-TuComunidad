@@ -64,7 +64,8 @@ public class VECINOController {
       }).orElseThrow(() -> new ResourceNotFoundException("Not found Comunidad with id = " + comunidadId));
       return new ResponseEntity<>(vecino, HttpStatus.CREATED);
     }
-/*
+*/
+  @GetMapping("/vecinos")
     List<VECINO> readAll() {
 
       return (List<VECINO>) vecinoRepository.findAll();
@@ -72,7 +73,7 @@ public class VECINOController {
     }
 
  
-
+/*
     @PostMapping("/vecinos")
 
     ResponseEntity<VECINO> create(@RequestBody VECINO newVECINO) throws URISyntaxException {
@@ -83,21 +84,21 @@ public class VECINOController {
 
     }
 
- 
+ */
 /*
-    @GetMapping("/infos/{id}")
+    @GetMapping("/vecinos/{piso}")
 
-    ResponseEntity<INFO> read(@PathVariable String id) {
+    ResponseEntity<VECINO> read(@PathVariable String piso) {
 
-      return infoRepository.findById(id).map(info ->
+      return vecinoRepository.findByPiso(piso).map(vecino ->
 
-         ResponseEntity.ok().body(info)
+         ResponseEntity.ok().body(vecino)
 
-      ).orElse(new ResponseEntity<INFO>(HttpStatus.NOT_FOUND));
+      ).orElse(new ResponseEntity<VECINO>(HttpStatus.NOT_FOUND));
 
-    }
+    }*/
 
-
+/*
     @PutMapping("/infos/{id}")
 
     ResponseEntity<INFO> update(@RequestBody INFO newINFO, @PathVariable String id) {

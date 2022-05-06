@@ -13,30 +13,24 @@ public class VOTACION {
     private String idvotacion;
     private String fechayhoralimite;
     private String tema;
-    private Integer votosafavor;
-    private Integer votosencontra;
+    private Integer votos;
+    
 
     public VOTACION () { }
-    public VOTACION(String idvotacion, String tema, String fechayhoralimite, Integer votosafavor, Integer votosencontra) {
+    public VOTACION(String idvotacion, String tema, String fechayhoralimite, Integer votos) {
         this.idvotacion = idvotacion;
         this.tema = tema;
         this.fechayhoralimite = fechayhoralimite;
-        this.votosafavor = votosafavor;
-        this.votosencontra = votosafavor;
+        this.votos = votos;
     
     }
     
-    public Integer getVotosafavor() {
-        return votosafavor;
+    
+    public Integer getVotos() {
+        return votos;
     }
-    public void setVotosafavor(Integer votosafavor) {
-        this.votosafavor = votosafavor;
-    }
-    public Integer getVotosencontra() {
-        return votosencontra;
-    }
-    public void setVotosencontra(Integer votosencontra) {
-        this.votosencontra = votosencontra;
+    public void setVotos(Integer votos) {
+        this.votos = votos;
     }
     public String getFechayhoralimite() {
         return fechayhoralimite;
