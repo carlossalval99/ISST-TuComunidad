@@ -1,4 +1,4 @@
-package es.upm.dit.isst.tfgapi.model;
+/*package es.upm.dit.isst.tfgapi.model;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -31,7 +31,7 @@ public class VECINO {
     @JoinColumn(name = "comunidad_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    private COMUNIDAD comunidad;*/
+    private COMUNIDAD comunidad;
 
     public VECINO () { }
 
@@ -86,3 +86,4 @@ public class VECINO {
     
     
 }
+*/

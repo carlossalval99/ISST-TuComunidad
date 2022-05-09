@@ -33,7 +33,7 @@ public class INFOController {
 
     }
 
-    @Secured("ROLE_VECINO")
+    
 
     @GetMapping("/infos")
 
@@ -44,7 +44,7 @@ public class INFOController {
     }
 
  
-    @Secured("ROLE_VECINO")
+    
     @PostMapping("/infos")
 
     ResponseEntity<INFO> create(@RequestBody INFO newINFO) throws URISyntaxException {
@@ -56,7 +56,7 @@ public class INFOController {
     }
 
  
-    @Secured("ROLE_VECINO")
+    
 
     @GetMapping("/infos/{id}")
 
@@ -70,7 +70,7 @@ public class INFOController {
 
     }
 
-    @Secured("ROLE_VECINO")
+    
 
     @PutMapping("/infos/{id}")
 
@@ -92,7 +92,7 @@ public class INFOController {
 
     }
 
-    @Secured("ROLE_VECINO")
+    
 
     @DeleteMapping("infos/{id}")
 

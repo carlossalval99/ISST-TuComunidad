@@ -1,4 +1,4 @@
-package es.upm.dit.isst.tfgapi.repository;
+/*package es.upm.dit.isst.tfgapi.repository;
 
 import java.util.List;
 
@@ -17,3 +17,4 @@ public interface VECINORepository extends CrudRepository<VECINO, String> {
    //VECINO findByPiso(String piso);
 
 }
+*/

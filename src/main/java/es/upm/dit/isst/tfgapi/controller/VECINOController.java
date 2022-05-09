@@ -1,4 +1,4 @@
-package es.upm.dit.isst.tfgapi.controller;
+/*package es.upm.dit.isst.tfgapi.controller;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -64,7 +64,7 @@ public class VECINOController {
       }).orElseThrow(() -> new ResourceNotFoundException("Not found Comunidad with id = " + comunidadId));
       return new ResponseEntity<>(vecino, HttpStatus.CREATED);
     }
-*/
+*//*
   @GetMapping("/vecinos")
     List<VECINO> readAll() {
 
@@ -155,5 +155,5 @@ public class VECINOController {
       }).orElse(new ResponseEntity<TFG>(HttpStatus.NOT_FOUND));  
 
     }*/
-
-}
+/*
+}*/
