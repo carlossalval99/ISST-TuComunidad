@@ -7,7 +7,7 @@ import './Home.css';
 import logoComVec from './logoComVec.png'
 
 class Home extends Component {
-
+/*
     state= {
         form:{
             piso: '',
@@ -37,9 +37,17 @@ class Home extends Component {
     .then((response) => response.json())
     .then((data) => console.log(data));
 
-    }
+    }*/
     render() {
-        return (
+        return(
+            <div>
+            <img src={logoComVec}  className="logo"/>
+            <h1>BIENVENIDO A TUCOMUNIDAD</h1>
+            <h3>Pulsa el botón para acceder a tu aplicación</h3>
+            <Button color="link"><Link to="/infos">INICIAR SESION</Link></Button>
+            </div>
+        )
+        /*return (
             <div>
                 <img src={logoComVec}  className="logo"/>
             <div className= "containerPrincipal">
@@ -69,7 +77,7 @@ class Home extends Component {
             </div>
         </div>
         </div>
-        );
+        );*/
     }
 }
 
