@@ -8,9 +8,15 @@ class VOTACIONList extends Component {
     super(props);
     this.state = { votacion: [] };
     this.remove = this.remove.bind(this);
+    this.disableAF = false;
+    this.disableEC = false;
   }
-
   componentDidMount() {
+    fetch("/votacions")
+      .then((response) => response.json())
+      .then((data) => this.setState({ votacion: data }));
+  }
+   componentDidUpdate() {
     fetch("/votacions")
       .then((response) => response.json())
       .then((data) => this.setState({ votacion: data }));
@@ -32,6 +38,19 @@ class VOTACIONList extends Component {
   }
 
   async sumar(idvotacion) {
+
+      if(this.disableAF ||  this.disableEC){
+          await fetch(`/votacions/${idvotacion}/incrementa`, {
+      method: "POST", 
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      }
+      this.disableAF = true;
+      this.disableEC = false;
+
     await fetch(`/votacions/${idvotacion}/incrementa`, {
       method: "POST", 
       headers: {
@@ -46,6 +65,19 @@ class VOTACIONList extends Component {
     });*/
   }
   async restar(idvotacion) {
+
+      if(this.disableAF ||  this.disableEC) {
+          await fetch(`/votacions/${idvotacion}/resta`, {
+      method: "POST", // RESTAR UNO
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      }
+      
+      this.disableAF = false;
+      this.disableEC = true;
     await fetch(`/votacions/${idvotacion}/resta`, {
       method: "POST", // RESTAR UNO
       headers: {
@@ -74,6 +106,7 @@ class VOTACIONList extends Component {
               <Button
                 size="sm"
                 color="primary"
+                disabled = {this.disableAF}
                 onClick={() => this.sumar(votacion.idvotacion)}
               >
                 Votar a Favor
@@ -81,11 +114,13 @@ class VOTACIONList extends Component {
               <Button
                 size="sm"
                 color="danger"
+                disabled = {this.disableEC}
                 onClick={() => this.restar(votacion.idvotacion)}
               >
                 Votar en Contra
               </Button>
             </ButtonGroup>
+            <p>{votacion.votos}</p>
           </td>
 
           <td>
@@ -106,6 +141,7 @@ class VOTACIONList extends Component {
                 Delete
               </Button>
             </ButtonGroup>
+
           </td>
         </tr>
       );

@@ -1,20 +1,12 @@
-.containerPrincipal {
-    position: absolute;
-        left: 50%;
-        top: 65%;
-        transform: translate(-50%, -50%);
-        border: 1px solid gray;
-        padding: 40px;
-        background-color: white;
-}
 
-.containerSecundario{
-    text-align: center;
+.siuu{
+     color: CBCDD4;
 }
-
 .logo{
-    display:block;
-    margin:auto;
-
-
+    width: 70%;
+    height: 900px;
+}
+.boton{
+    width: 30%;
+    background-color: 2F54BE;
 }

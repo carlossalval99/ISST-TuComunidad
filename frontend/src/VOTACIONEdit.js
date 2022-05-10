@@ -22,7 +22,7 @@ class VOTACIONEdit extends Component {
     }
 
     async componentDidMount() {
-        if (this.props.match.params.idvotacion !== 'new') { // 
+        if (this.props.match.params.idvotacion !== 'new') {
             const votacion = await (await fetch(`/votacions/${this.props.match.params.idvotacion}`)).json();
             this.setState({item: votacion});
         }

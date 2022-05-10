@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button, Container } from 'reactstrap';
 import './Home.css';
 import logoComVec from './logoComVec.png'
+import buenosdias from './bn.gif'
 
 class Home extends Component {
 /*
@@ -38,14 +39,27 @@ class Home extends Component {
     .then((data) => console.log(data));
 
     }*/
+
+    
+    
+            
+            /*
+            <div>
+                <img src={buenosdias}  className="logo"/>
+                <Button className="boton" color="link"><Link to="/infos">NO ME SALIAN LAS COSAS CON EL CSS ASI Q DEJE ESTO, EN EL CODIGO ESTA LO Q INTENTABA COMENTADO</Link></Button>
+            </div>
+*/
+
     render() {
         return(
             <div>
-            <img src={logoComVec}  className="logo"/>
-            <h1>BIENVENIDO A TUCOMUNIDAD</h1>
             <h3>Pulsa el botón para acceder a tu aplicación</h3>
-            <Button color="link"><Link to="/infos">INICIAR SESION</Link></Button>
+            <div className="siuu">
+            <img src={logoComVec}  className="logo"/>
+            <Button className="boton" color="link"><Link to="/infos">BIENVENIDO A TUCOMUNIDAD</Link></Button>
             </div>
+            </div>
+            
         )
         /*return (
             <div>
