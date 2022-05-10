@@ -30,7 +30,7 @@ export default class AppNavbar extends Component {
     
     
     render() {
-        return <Navbar color="dark" dark expand="md">
+        return <Navbar color="light" secondary expand="md">
             <NavbarBrand tag={Link} to="/">Cerrar Sesion</NavbarBrand>
 
             <Button color="link"><Link to="/infos">TABLON DE INFO</Link></Button>

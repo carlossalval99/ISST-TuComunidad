@@ -161,7 +161,15 @@ class VOTACIONList extends Component {
               </Button>
             </div>
 
-            <Table className="mt-4">
+            <Table
+                className="mt-4"
+                style={{
+                  borderBottom: "solid 3px black",
+                  background: "grey",
+                  color: "white",
+                  fontWeight: "bold",
+                }}
+              >
               <thead>
                 <tr>
                   <th width="15%">Fecha y Hora límite</th>

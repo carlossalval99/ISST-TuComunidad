@@ -49,29 +49,38 @@ class INFOList extends Component {
         });
 
         return (
-            <div>
-                <AppNavbar/>
-                <Container fluid>
-                    <div className="float-right">
-                        <Button color="success" tag={Link} to="/infos/new">Añadir publicación</Button>
-                    </div>
-                    <h3>TABLÓN DE INFORMACIÓN</h3>
-                    <Table className="mt-4">
-                        <thead>
-                        <tr>
-                            <th width="15%">Nº</th>
-                            <th width="15%">Tema</th>
-                            <th width="30%">Publicación</th>
-                            <th width="15%">Vecino</th>
-                            <th width="15%">Acciones</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {infoList}
-                        </tbody>
-                    </Table>
-                </Container>
-            </div>
+          <div>
+            <AppNavbar />
+            <Container fluid>
+              <div className="float-right">
+              <h3>TABLÓN DE INFORMACIÓN</h3>
+                <Button color="success" tag={Link} to="/infos/new">
+                  Añadir publicación
+                </Button>
+              </div>
+              
+              <Table
+                className="mt-4"
+                style={{
+                  borderBottom: "solid 3px black",
+                  background: "grey",
+                  color: "white",
+                  fontWeight: "bold",
+                }}
+              >
+                <thead>
+                  <tr>
+                    <th width="15%">Nº</th>
+                    <th width="15%">Tema</th>
+                    <th width="30%">Publicación</th>
+                    <th width="15%">Vecino</th>
+                    <th width="15%">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>{infoList}</tbody>
+              </Table>
+            </Container>
+          </div>
         );
     }
 }

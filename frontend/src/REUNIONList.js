@@ -33,7 +33,7 @@ class REUNIONList extends Component {
     render() {
         
 
-        const reunionList = this.state.reunion.map(reunion => {
+        const reunionList = this.state.reunion.sort((a,b)=>a.fechayhora > b.fechayhora ? 1 : -1).map(reunion => {
             return <tr key={reunion.idreunion}>
                 <td style={{whiteSpace: 'nowrap'}}>{reunion.idreunion}</td>
                 <td>{reunion.fechayhora}</td>
@@ -48,27 +48,36 @@ class REUNIONList extends Component {
         });
 
         return (
-            <div>
-                <AppNavbar/>
-                <Container fluid>
-                    <div className="float-right">
-                        <Button color="success" tag={Link} to="/reunions/new">Añadir reunión</Button>
-                    </div>
-                    <h3>REUNIONES</h3>
-                    <Table className="mt-4">
-                        <thead>
-                        <tr>
-                            <th width="30%">Nº</th>
-                            <th width="30%">Fecha y hora</th>
-                            <th width="30%">Detalles de la reunion</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {reunionList}
-                        </tbody>
-                    </Table>
-                </Container>
-            </div>
+          <div>
+            <AppNavbar />
+            <Container fluid>
+              <div className="float-right">
+              <h3>REUNIONES</h3>
+                <Button color="success" tag={Link} to="/reunions/new">
+                  Añadir reunión
+                </Button>
+              </div>
+              
+              <Table
+                className="mt-4"
+                style={{
+                  borderBottom: "solid 3px black",
+                  background: "grey",
+                  color: "white",
+                  fontWeight: "bold",
+                }}
+              >
+                <thead>
+                  <tr>
+                    <th width="30%">Nº</th>
+                    <th width="30%">Fecha y hora</th>
+                    <th width="30%">Detalles de la reunion</th>
+                  </tr>
+                </thead>
+                <tbody>{reunionList}</tbody>
+              </Table>
+            </Container>
+          </div>
         );
     }
 }
