@@ -51,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.PUT, "/reunions/**").hasRole("PRESIDENTE")
                 .antMatchers(HttpMethod.DELETE, "/reunions/**").hasRole("PRESIDENTE")
 
-                .antMatchers(HttpMethod.POST, "/votacions/**").hasRole("PRESIDENTE")
+                .antMatchers(HttpMethod.POST, "/votacions").hasRole("PRESIDENTE")
                 .antMatchers(HttpMethod.PUT, "/votacions/**").hasRole("PRESIDENTE")
                 .antMatchers(HttpMethod.DELETE, "/votacions/**").hasRole("PRESIDENTE")
 
@@ -61,6 +61,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
                 //.antMatchers("/infos").hasAnyRole("PRESIDENTE", "VECINO")
+                .antMatchers("/App.css", "/Home.css", "/index.css","/manifest.json").authenticated()
                 .anyRequest().authenticated()   //Authenticated users can perform any other request not included above
             .and().formLogin().permitAll()  
             .and().logout().permitAll();
